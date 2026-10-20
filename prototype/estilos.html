@@ -6,35 +6,22 @@
 <title>I don't kurwa care</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700;800&family=Big+Shoulders+Display:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,800;1,600&family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a flag-split hero (top colour / bottom colour, headline straddling the seam),
-   then slogan ticker, collection grid, a "Polish lesson" dictionary entry, manifesto, footer.
-   Three committed looks share one structure; only the tokens change. */
+/* Layout: Duma x Podziemie. Dark header, flag-split hero (white / red, headline straddling the seam),
+   black ticker, collection on white, Polish lesson on a full red band, manifesto on black. */
 :root{
   --bg:#FFFFFF; --ink:#141012; --red:#D4213D; --deep:#A3122A; --muted:#6E6265; --line:#E6DDDE;
   --card:#F6F2F2; --brass:#B08D57;
   --heroTop:#FFFFFF; --heroBot:#D4213D; --txtTop:#D4213D; --txtBot:#FFFFFF;
-  --display:"Anton","Impact","Arial Narrow",sans-serif; --dispWeight:400; --dispStyle:normal; --dispCase:uppercase; --dispTrack:0.005em;
+  --display:"Big Shoulders Display","Arial Narrow",sans-serif; --dispWeight:900; --dispStyle:normal; --dispCase:uppercase; --dispTrack:0.005em;
   --body:"Archivo","Helvetica Neue",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --radius:0px;
   color-scheme:light;
 }
-[data-style="podziemie"]{
-  --bg:#0E0E0E; --ink:#ECE6DA; --red:#C4182F; --deep:#A3122A; --muted:#8C857B; --line:#2A2726;
-  --card:#171615; --brass:#B08D57;
-  --heroTop:#0E0E0E; --heroBot:#A3122A; --txtTop:#ECE6DA; --txtBot:#0E0E0E;
-  --display:"Big Shoulders Display","Arial Narrow",sans-serif; --dispWeight:900; --dispTrack:0.01em;
-  color-scheme:dark;
-}
-[data-style="salon"]{
-  --bg:#ECE6DA; --ink:#1C1517; --red:#8A1023; --deep:#6E0C1C; --muted:#6F6458; --line:#D6CCBB;
-  --card:#E3DBCC; --brass:#94723F;
-  --heroTop:#ECE6DA; --heroBot:#6E0C1C; --txtTop:#6E0C1C; --txtBot:#ECE6DA;
-  --display:"Cormorant Garamond","Garamond","Times New Roman",serif; --dispWeight:700; --dispStyle:italic; --dispCase:none; --dispTrack:-0.01em;
-  --radius:2px;
-}
+.band-dark{--bg:#0E0E0E; --ink:#ECE6DA; --muted:#8C857B; --line:#2A2726; --card:#171615; background:var(--bg); color:var(--ink); color-scheme:dark}
+.band-red{--bg:#D4213D; --ink:#FFFFFF; --red:#0E0E0E; --muted:rgba(255,255,255,.78); --line:rgba(255,255,255,.35); --card:#C01C36; background:var(--bg); color:var(--ink)}
 *{box-sizing:border-box}
 html,body{background:var(--bg)}
 body{color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
@@ -44,13 +31,12 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px}
 
 /* header */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:#0E0E0E}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
 .mono-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .mono-logo b{font-family:var(--display);font-weight:var(--dispWeight);font-style:var(--dispStyle);font-size:26px;letter-spacing:.04em;line-height:1;color:var(--ink)}
-.mono-logo i{display:inline-block;width:22px;height:14px;background:linear-gradient(var(--ink) 50%,var(--red) 50%);border:1px solid var(--ink)}
-[data-style="duma"] .mono-logo i{background:linear-gradient(#fff 50%,var(--red) 50%)}
+.mono-logo i{display:inline-block;width:22px;height:14px;background:linear-gradient(#fff 50%,#D4213D 50%)}
 nav{display:flex;gap:22px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.09em}
 nav a{text-decoration:none;opacity:.85}
 nav a:hover{opacity:1;color:var(--red)}
@@ -66,15 +52,14 @@ nav a:hover{opacity:1;color:var(--red)}
 .hero .wrap{display:grid;grid-template-rows:1fr auto 1fr;min-height:min(78vh,720px);padding-block:28px}
 .eyebrow{align-self:end;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--txtTop);padding-bottom:18px}
 .hero h1{margin:0;font-family:var(--display);font-weight:var(--dispWeight);font-style:var(--dispStyle);text-transform:var(--dispCase);letter-spacing:var(--dispTrack);
-  font-size:clamp(54px,12.5vw,172px);line-height:.88;text-wrap:balance;
+  font-size:clamp(60px,14vw,190px);line-height:.86;text-wrap:balance;
   background:linear-gradient(var(--txtTop) 50%,var(--txtBot) 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
-[data-style="salon"] .hero h1{line-height:.95;font-size:clamp(56px,12vw,160px)}
 .hero h1 .k{display:inline-block;animation:kick 3.2s ease-in-out 1s infinite}
 @keyframes kick{0%,86%,100%{transform:none}90%{transform:skewX(-8deg) translateX(4px)}95%{transform:skewX(4deg)}}
 @media (prefers-reduced-motion:reduce){.hero h1 .k{animation:none}}
 .hero-foot{align-self:start;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-top:22px;color:var(--txtBot)}
 .hero-foot p{margin:0;max-width:34ch;font-size:18px;line-height:1.4}
-.hero-foot p em{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-style:italic;display:block}
+.hero-foot p em{font-family:var(--display);font-weight:var(--dispWeight);font-style:normal;text-transform:uppercase;font-size:30px;line-height:1;letter-spacing:.02em;display:block;margin-bottom:6px}
 .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:14px;padding:14px 22px;border:2px solid currentColor;border-radius:var(--radius);background:transparent;color:inherit;cursor:pointer;transition:background .2s,color .2s}
 .hero-foot .btn:hover{background:var(--txtBot);color:var(--heroBot)}
 .ipa{position:absolute;right:max(16px,env(safe-area-inset-right,0px));top:24px;font-family:var(--mono);font-size:12px;color:var(--txtTop);opacity:.7}
@@ -108,7 +93,8 @@ section{padding-block:72px}
 .add:hover{background:var(--ink);color:var(--bg)}
 
 /* lesson */
-.lesson{background:var(--card)}
+.lesson{background:var(--bg)}
+.lesson .sec-head{border-color:var(--ink)}
 .entry{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:start}
 @media (max-width:820px){.entry{grid-template-columns:1fr;gap:28px}}
 .word{font-family:var(--display);font-weight:var(--dispWeight);font-style:var(--dispStyle);text-transform:var(--dispCase);font-size:clamp(80px,16vw,200px);line-height:.85;color:var(--red);margin:0;letter-spacing:var(--dispTrack)}
@@ -118,37 +104,32 @@ section{padding-block:72px}
 .defs li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;counter-increment:d}
 .defs li::before{content:counter(d);font-family:var(--mono);font-size:13px;color:var(--red);padding-top:3px}
 .defs strong{display:block;font-size:16px}
-.defs q{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:20px;quotes:"„" "”";margin-top:2px}
+.defs q{display:block;font-family:var(--body);font-style:italic;font-weight:600;font-size:19px;quotes:"„" "”";margin-top:2px}
 .defs small{color:var(--muted);font-size:13px}
 
 /* manifesto */
 .manifesto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
 @media (max-width:820px){.manifesto{grid-template-columns:1fr}}
-.manifesto blockquote{margin:0;font-family:var(--display);font-weight:var(--dispWeight);font-style:var(--dispStyle);text-transform:var(--dispCase);font-size:clamp(32px,4.6vw,58px);line-height:1;text-wrap:balance}
-.manifesto blockquote span{color:var(--red)}
+.manifesto blockquote{margin:0;font-family:var(--display);font-weight:var(--dispWeight);text-transform:uppercase;font-size:clamp(44px,6.4vw,92px);line-height:.95;text-wrap:balance}
+#manifest{padding-block:96px}
+.manifesto blockquote span{color:#D4213D}
+.who b{color:#D4213D}
 .manifesto p{margin:0 0 14px;max-width:60ch;color:var(--ink);opacity:.88}
 .who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:28px}
 @media (max-width:620px){.who{grid-template-columns:1fr}}
 .who div{background:var(--bg);padding:18px}
-.who b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.who b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .who span{font-size:14px}
 
-footer{border-top:2px solid var(--ink);padding-block:32px;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding-block:32px;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-/* style switcher */
-.switch{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;gap:4px;align-items:center;background:#141012;color:#ECE6DA;padding:6px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.35);max-width:calc(100% - 32px)}
-.switch button{all:unset;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:12px;padding:8px 14px;border-radius:999px;white-space:nowrap}
-.switch button[aria-pressed="true"]{background:#D4213D;color:#fff}
-.switch button:focus-visible{outline:2px solid #ECE6DA}
-.switch .lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;opacity:.6;padding:0 8px 0 10px}
-@media (max-width:520px){.switch .lbl{display:none}.switch button{padding:8px 11px}}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:20;background:var(--red);color:#fff;font-family:var(--mono);font-size:12px;padding:8px 14px}
 </style>
 </head>
 <body>
 
-<div id="app" data-style="duma">
-<header>
+<div id="app">
+<header class="band-dark">
   <div class="wrap bar">
     <a class="mono-logo" href="#top" aria-label="IDKC"><i></i><b>IDKC</b></a>
     <nav>
@@ -191,7 +172,7 @@ footer{border-top:2px solid var(--ink);padding-block:32px;font-family:var(--mono
   </div>
 </section>
 
-<section class="lesson" id="lekcja">
+<section class="lesson band-red" id="lekcja">
   <div class="wrap">
     <div class="sec-head"><h2>Polish Lesson #1</h2><small data-en="For honorary Poles" data-pl="Dla honorowych Polaków">For honorary Poles</small></div>
     <div class="entry">
@@ -209,7 +190,7 @@ footer{border-top:2px solid var(--ink);padding-block:32px;font-family:var(--mono
   </div>
 </section>
 
-<section id="manifest">
+<section id="manifest" class="band-dark">
   <div class="wrap manifesto">
     <blockquote data-en-html="We built half of Europe. <span>We don't need permission</span> to be proud of it." data-pl-html="Zbudowaliśmy pół Europy. <span>Nie potrzebujemy pozwolenia,</span> żeby być dumnym.">We built half of Europe. <span>We don't need permission</span> to be proud of it.</blockquote>
     <div>
@@ -224,16 +205,10 @@ footer{border-top:2px solid var(--ink);padding-block:32px;font-family:var(--mono
   </div>
 </section>
 
-<div class="wrap"><footer><span>I don't kurwa care · IDKC</span><span data-en="Style prototype by YM Enterprise · not a live shop" data-pl="Prototyp stylu · YM Enterprise · to nie jest sklep">Style prototype by YM Enterprise · not a live shop</span></footer></div>
+<div class="band-dark"><div class="wrap"><footer><span>I don't kurwa care · IDKC</span><span data-en="Style prototype by YM Enterprise · not a live shop" data-pl="Prototyp stylu · YM Enterprise · to nie jest sklep">Style prototype by YM Enterprise · not a live shop</span></footer></div></div>
 </main>
 </div>
 
-<div class="switch" role="group" aria-label="Estilo">
-  <span class="lbl">Estilo</span>
-  <button type="button" data-s="duma" aria-pressed="true">01 Duma</button>
-  <button type="button" data-s="podziemie" aria-pressed="false">02 Podziemie</button>
-  <button type="button" data-s="salon" aria-pressed="false">03 Salon</button>
-</div>
 <div class="toast" id="toast" hidden></div>
 
 <script>
@@ -284,15 +259,6 @@ footer{border-top:2px solid var(--ink);padding-block:32px;font-family:var(--mono
   }
   document.getElementById('l-en').onclick=function(){setLang('en')};
   document.getElementById('l-pl').onclick=function(){setLang('pl')};
-  var btns=document.querySelectorAll('.switch button');
-  function setStyle(s){
-    app.setAttribute('data-style',s);
-    document.documentElement.setAttribute('data-style',s);
-    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.s===s)});
-    try{localStorage.setItem('idkc-style',s)}catch(e){}
-  }
-  btns.forEach(function(b){b.onclick=function(){setStyle(b.dataset.s)}});
-  try{var s=localStorage.getItem('idkc-style'); if(s) setStyle(s);}catch(e){}
 })();
 </script>
 </body>
