@@ -13,7 +13,7 @@ Idea: el compañero no polaco compra la camiseta de SU trabajo, con un pictogram
 | O1 | Construcción | BUDOWA (Construction site) | casco de obra + paleta de albañil |
 | O2 | Transporte y logística | TRASA (The long haul) | cabina de camión (vista frontal) |
 | O3 | Cocina | KUCHNIA (The kitchen) | gorro de chef + cuchillo de cocinero |
-| O4 | Almacén | MAGAZYN (The warehouse) | palé + carretilla |
+| O4 | Almacén | MAGAZYN (The warehouse) | carretilla elevadora con palé de cajas (silueta rellena) |
 | O5 | Hotel y recepción | RECEPCJA | campanilla de mostrador |
 | O6 | Limpieza | SPRZĄTANIE | cubo y fregona |
 | O7 | Soldadura e industria | SPAWACZ | careta de soldador |
@@ -56,7 +56,19 @@ Simple flat pictogram icon of a long-haul truck cab seen from the front, bold th
 ```
 Simple flat pictogram icon of a chef's toque hat with a chef's knife crossed behind it, bold thick outline, minimal, symmetrical, like a workwear safety-sign icon, single solid red color (#D4213D) on a pure white background, no text, no letters, no shading, no gradients, no shadows, high contrast, centered, vector style
 ```
-**O4 · Magazyn**
+**O4 · Magazyn** (v2: la versión palé + caja se descarta porque no se distingue en versión minimalista)
+
+Regla aprendida: los pictogramas de solo contorno pierden reconocimiento al simplificarse. Usar siluetas rellenas con detalles recortados en blanco y un objeto con silueta inconfundible.
+
+Opción A (recomendada, carretilla elevadora):
 ```
-Simple flat pictogram icon of a wooden pallet with a cardboard box on top, bold thick outline, minimal, symmetrical, like a workwear safety-sign icon, single solid red color (#D4213D) on a pure white background, no text, no letters, no logos, no shading, no gradients, no shadows, high contrast, centered, vector style
+Bold solid filled silhouette icon of a forklift truck in side view carrying a pallet loaded with stacked boxes, thick chunky shapes, a few clean white cut-out details for the driver cage, mast and wheels, like a road-sign or warehouse safety-sign pictogram, single solid red color (#D4213D) on a pure white background, no text, no letters, no logos, no shading, no gradients, no shadows, high contrast, centered, vector style
+```
+Opción B (estantería de almacén):
+```
+Bold solid filled silhouette icon of a tall warehouse storage rack seen from the front, three shelves each holding chunky boxes, thick shapes with clean white gaps between boxes, like a safety-sign pictogram, single solid red color (#D4213D) on a pure white background, no text, no letters, no logos, no shading, no gradients, no shadows, high contrast, centered, vector style
+```
+Opción C (transpaleta manual):
+```
+Bold solid filled silhouette icon of a manual pallet jack in side view loaded with a stack of three boxes, thick chunky shapes with clean white cut-out details, like a safety-sign pictogram, single solid red color (#D4213D) on a pure white background, no text, no letters, no logos, no shading, no gradients, no shadows, high contrast, centered, vector style
 ```
