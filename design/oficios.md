@@ -10,7 +10,7 @@ Idea: el compañero no polaco compra la camiseta de SU trabajo, con un pictogram
 ## Oficios (orden de prioridad provisional)
 | Código | Sector | Palabra polaca | Objeto del pictograma |
 |---|---|---|---|
-| O1 | Construcción | BUDOWA (Construction site) | casco de obra + paleta de albañil |
+| O1 | Construcción | BUDOWA (Construction site) | casco de obra con dos huesos cruzados detrás (estilo bandera pirata) |
 | O2 | Transporte y logística | TRASA (The long haul) | cabina de camión (vista frontal) |
 | O3 | Cocina | KUCHNIA (The kitchen) | gorro de chef + cuchillo de cocinero |
 | O4 | Almacén | MAGAZYN (The warehouse) | carretilla elevadora con palé de cajas (silueta rellena) |
@@ -44,9 +44,9 @@ Pedir siempre fondo blanco puro: facilita quitarlo después para el PNG transpar
 ## Tanda 1: prompts listos (O1 a O4)
 Pegar tal cual en Grok, Gemini o Copilot. Pedir 4 variantes.
 
-**O1 · Budowa**
+**O1 · Budowa** (v2: martillo y paleta cruzados se descartan por parecerse a la iconografía del martillo y la hoz, delicada para el público polaco)
 ```
-Simple flat pictogram icon of a construction hard hat with a mason's trowel crossed behind it, bold thick outline, minimal, symmetrical, like a workwear safety-sign icon, single solid red color (#D4213D) on a pure white background, no text, no letters, no shading, no gradients, no shadows, high contrast, centered, vector style
+Bold solid filled silhouette icon of a construction hard hat in front view, with two crossed bones behind it like a pirate flag Jolly Roger, classic cartoon bones with rounded knobby ends crossing in an X behind the helmet, thick chunky shapes, a few clean white cut-out details for the helmet ridges and brim, symmetrical, like a workwear safety-sign pictogram, single solid red color (#D4213D) on a pure white background, no skull, no text, no letters, no logos, no shading, no gradients, no shadows, high contrast, centered, vector style
 ```
 **O2 · Trasa**
 ```
